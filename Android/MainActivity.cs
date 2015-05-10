@@ -20,6 +20,8 @@ namespace XForms.Android
 		{
 			base.OnCreate (bundle);
 
+			App.SetBluetoothAdapter (Adapter.Current);
+
 			Xamarin.Forms.Forms.Init (this, bundle);
 
 			SetPage (App.GetMainPage ());

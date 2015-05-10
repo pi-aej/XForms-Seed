@@ -7,10 +7,22 @@ namespace XForms
 	{
 		public HelloView (HelloViewModel context)
 		{
-			Content = new Label {
+			var title = new Label {
 				Text = context.Words,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
+			};
+			var blemessage = new Label {
+				Text = context.HowManyDevices,
+				VerticalOptions = LayoutOptions.CenterAndExpand,
+				HorizontalOptions = LayoutOptions.CenterAndExpand,
+			};
+			Content = new StackLayout()
+			{
+				Orientation = StackOrientation.Vertical,
+				Children = { 
+					title, 
+					blemessage }
 			};
 		}
 	}
