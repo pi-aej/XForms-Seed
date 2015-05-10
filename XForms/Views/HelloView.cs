@@ -5,10 +5,10 @@ namespace XForms
 {
 	public class HelloView : ContentPage
 	{
-		public HelloView ()
+		public HelloView (HelloViewModel context)
 		{
 			Content = new Label {
-				Text = "Hello, Forms!",
+				Text = context.Words,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 			};

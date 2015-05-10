@@ -7,7 +7,9 @@ namespace XForms
 	{
 		public static Page GetMainPage ()
 		{	
-			return new HelloView ();
+			return new HelloView (
+				new HelloViewModel("Hello, XForms")
+			);
 		}
 	}
 }
