@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Linq;
+using System.ComponentModel;
 
 namespace XForms
 {
-	public class HelloViewModel
+	public class HelloViewModel : INotifyPropertyChanged
 	{
+		public event PropertyChangedEventHandler PropertyChanged;
+
 		public string Words { get; private set; }
 
 		IBLEService bleservice;
@@ -18,6 +21,7 @@ namespace XForms
 		public void ScanForDevices()
 		{
 			bleservice.Scan();
+			PropertyChanged (this, new PropertyChangedEventArgs ("HowManyDevices"));
 		}
 
 		public string HowManyDevices

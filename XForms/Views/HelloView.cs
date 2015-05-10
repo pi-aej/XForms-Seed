@@ -7,17 +7,22 @@ namespace XForms
 	{
 		public HelloView (HelloViewModel context)
 		{
+			this.BindingContext = context;
+
 			var title = new Label {
 				Text = context.Words,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 			};
-			//Note: This no databinding yet!
+
 			var blemessage = new Label {
 				Text = context.HowManyDevices,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 			};
+
+			blemessage.SetBinding<HelloViewModel> (Label.TextProperty, vm => vm.HowManyDevices);
+
 			var scanbutton = new Button {
 				Text = "Scan for Devices",
 				Command = new Command (() => context.ScanForDevices ())
