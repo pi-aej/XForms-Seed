@@ -17,7 +17,7 @@ namespace XForms
 			return new HelloView (
 				new HelloViewModel(
 					"Hello, XForms", 
-					new BLEService(App.BLEAdapter))
+					new MockBLEService())
 			);
 		}
 	}

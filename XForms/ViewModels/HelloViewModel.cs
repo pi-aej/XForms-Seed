@@ -7,9 +7,9 @@ namespace XForms
 	{
 		public string Words { get; private set; }
 
-		BLEService bleservice;
+		IBLEService bleservice;
 
-		public HelloViewModel (string wordmodel, BLEService blemodel)
+		public HelloViewModel (string wordmodel, IBLEService blemodel)
 		{
 			Words = wordmodel;
 			bleservice = blemodel;

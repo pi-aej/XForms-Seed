@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace XForms
 {
-	public class BLEService
+	public class BLEService : IBLEService
 	{
 		IAdapter Adapter;
 		public BLEService (IAdapter adapter)
